@@ -1,12 +1,9 @@
-# Discord Bot with TypeScript
-A modern Discord bot template built with TypeScript for scalable and maintainable bot development.
+# Discord Bot for Counting Channel
+Inspired of a Under-Scape bot (Mochi), this bot is only a simple counting bot.
 
 ## Features
-- 🤖 Discord.js v14 framework
-- 📘 TypeScript for type safety
-- ⚡ Slash commands support
-- 🛠️ Development tools configured
-- 🔧 Environment configuration
+- You can configure the counting channel
+- The bot delete the bad counts
 
 ## Prerequisites
 - Node.js (version 18 or higher)
