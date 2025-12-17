@@ -3,6 +3,7 @@ import { configDotenv } from "dotenv";
 import path from "path";
 import fs from "fs";
 import { CommandDefinition } from "./type";
+import { Counter } from "./counter";
 
 configDotenv();
 
@@ -14,6 +15,8 @@ const client = new Client({
         GatewayIntentBits.GuildMembers,
     ]
 });
+
+const counter = new Counter(client);
 
 const commands = new Collection<string, CommandDefinition>();
 
