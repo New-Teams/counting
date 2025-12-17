@@ -25,7 +25,7 @@ export class Counter {
             let lastSender = await this.redis.get(`countbot:lastCounter`);
 
             if(lastSender == message.author.id) {
-                const replyMessage = await message.reply('You cannot send a message twice in a row. <:no:1450807672239816755>');
+                const replyMessage = await message.reply('Tu ne peux pas envoyer deux messages d\'affilé <:no:1450807672239816755>');
                 setTimeout(async () => {
                     message.delete().catch();
                     replyMessage.delete().catch();
@@ -40,7 +40,7 @@ export class Counter {
                 this.redis.set(`countbot:lastCounter`, message.author.id);
                 await message.react('<:yes:1450807671342104668>');
             }else{
-                const replyMessage = await message.reply(`This number is incorrect! <:no:1450807672239816755>`);
+                const replyMessage = await message.reply(`Cela n'est pas un nombre ! <:no:1450807672239816755>`);
                 setTimeout(async () => {
                     await message.delete().catch();
                     await replyMessage.delete().catch();
