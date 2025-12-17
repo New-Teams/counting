@@ -25,7 +25,7 @@ export class Counter {
             let lastSender = await this.redis.get(`countbot:lastCounter`);
 
             if(lastSender == message.author.id) {
-                const replyMessage = await message.reply('You cannot send a message twice in a row. ROUGE COLÈRE');
+                const replyMessage = await message.reply('You cannot send a message twice in a row. <:no:1450807672239816755>');
                 setTimeout(async () => {
                     message.delete().catch();
                     replyMessage.delete().catch();
@@ -36,11 +36,11 @@ export class Counter {
             if(message.content.startsWith(`${lastNumber + 1} `) || message.content.startsWith(`${lastNumber + 1}\n`) || message.content == `${lastNumber + 1}`) {
                 lastNumber++;
 
-                this.redis.set(`mochibot:counter`, lastNumber);
-                this.redis.set(`mochibot:lastCounter`, message.author.id);
-                await message.react('CONTENT');
+                this.redis.set(`countbot:counter`, lastNumber);
+                this.redis.set(`countbot:lastCounter`, message.author.id);
+                await message.react('<:yes:1450807671342104668>');
             }else{
-                const replyMessage = await message.reply(`This number is incorrect! ROUGE COLÈRE`);
+                const replyMessage = await message.reply(`This number is incorrect! <:no:1450807672239816755>`);
                 setTimeout(async () => {
                     await message.delete().catch();
                     await replyMessage.delete().catch();
