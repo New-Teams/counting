@@ -1,7 +1,7 @@
 {
-  "name": "discordbot-ts-template",
+  "name": "counting-bot",
   "version": "1.0.0",
-  "description": "Template for an discord bot project with typescript.",
+  "description": "A simple counting bot for discord channel",
   "main": "dist/index.js",
   "scripts": {
     "start": "tsc && node .",
