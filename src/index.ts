@@ -89,6 +89,13 @@ client.on(Events.InteractionCreate, async interaction => {
 
 client.once(Events.ClientReady, readyClient => {
     console.log(`Ready! Logged in as ${readyClient.user.tag}`);
+	readyClient.user.setPresence({
+        activities: [{
+            name: 'Mon statut personnalisé',
+            type: ActivityType.Custom
+        }],
+        status: 'online' // 'online', 'idle', 'dnd', ou 'invisible'
+    });
 });
 
 client.login(process.env.TOKEN)
