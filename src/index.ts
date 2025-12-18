@@ -89,6 +89,13 @@ client.on(Events.InteractionCreate, async interaction => {
 
 client.once(Events.ClientReady, readyClient => {
     console.log(`Ready! Logged in as ${readyClient.user.tag}`);
+	readyClient.user.setPresence({
+        activities: [{
+            type: 4,
+            state: "Powered by UnderScape"
+        }],
+        status: "online"
+    });
 });
 
 client.login(process.env.TOKEN)
