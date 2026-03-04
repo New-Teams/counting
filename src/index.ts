@@ -91,7 +91,7 @@ client.once(Events.ClientReady, readyClient => {
     console.log(`Ready! Logged in as ${readyClient.user.tag}`);
 	readyClient.user.setPresence({
         activities: [{
-            name: 'Mon statut personnalisé',
+            name: 'Custom',
             type: ActivityType.Custom
         }],
         status: 'online' // 'online', 'idle', 'dnd', ou 'invisible'
